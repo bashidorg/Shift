@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# load fonts
+xset fp+ ~/.fonts
+xset fp rehash
+
+xrandr --output HDMI1 --auto
+
+# Sources for terminal
+xrdb -merge ~/.Xresources
+
+# Wallpaper
+nitrogen --restore &
+
+# notification daemon
+dunst &
+
+# compositor
+compton &
+
+# color temperature
+redshift &
+
+# System Tray
+cbatticon &
+volumeicon &
+nm-applet &
+clipit &
+
+# Panel
+#polybar top -c ~/.config/polybar/Groove
+tint2 -c ~/.config/tint2/Light.tint2rc &
