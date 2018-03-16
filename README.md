@@ -8,7 +8,7 @@ Shift is a theme switcher tool to change your window manager setup, written in B
 , terminal colorscheme , and panel in **single line command** with available arguments.`shift` automated to detect what window manager log in session you entered and check panel that are running in the background. `shift` currently support
 some window manager : `Openbox`, `windowchef`, and `Xfce4`/`Xfwm4`. I
 
-
+![preview](shift.gif)
 
 ## Window manager supported
 
@@ -23,16 +23,16 @@ What you might need :
 * `wmctrl` to get log in session of window manager.
 * `feh`, `nitrogen`, `hsetroot` to set Wallpaper.
 * `xfconf` to set GTK 3 themes and icons. 
-   
-  **NOTE:** this tools not support yet GTK 2
 
 ## Installation
 
     $ git clone https://github.com/noirecat/shift.git
     $ cd Shift
-    $ chmod +x shift
+    $ chmod +x Shift
 
 ## The Rules of Config
+
+Example config of window manager include in this repo.
 
 *  Openbox autostart configuration file must include :
 
@@ -48,11 +48,11 @@ What you might need :
    
          * tint2 -c ~/.config/tint2/[preset].tint2rc &
 
-*  Windowchef configuration file must be placed either under
+*  Windowchef configuration file must be placed under :
 
         ~/.config/windowchef/windowchefrc  
    
-   Must include :
+   And include this line :
         
         ...
         export THEME="preset"
@@ -74,54 +74,55 @@ What you might need :
 
         ~/.Xresources 
       
-  Must include :
+  And include this line:
   
         # include ".colors/preset"
 
 ## Usage
 
-Change setup include (terminal,wm themes) single line command.
+Change setup include (terminal,wm gtk2/3 themes) in single line command.
 
-    $ shift --themes [preset-name]
+    $ Shift --setup [preset-name]
     
 Change setup include (terminal,wm themes) with different panel.
 
-    $ shift --themes [preset-name] --polybar|--lemonbar|--tint2 [panel-name] o
+    $ Shift --setup [preset-name] --polybar|--lemonbar|--tint2 [panel-name]
 
-Only change the gtk3 themes.
-   
-    $ shift --themes [themes-name]
+Only change the gtk2/3 icons.
 
-Only change the icons.
+    $ Shift --icons [icons-name]
 
-    $ shift --icons [icons-name]
-
-Change gtk 3 themes and icons if using `Xfce4`/`Xfwm4`.
+Change gtk 3 themes and icons when you login in `Xfce4`/`Xfwm4` session.
  
-    $ shift --themes [themes-name] --icons [icons-name]
+    $ Shift --setup [themes-name] --icons [icons-name]
 
 Backup all desktop configuration includes another wm that supported.
   
-    $ shift --backup-all [dir-name]
+    $ Shift --backup-all [dir-name]
 
 Or, just backup the current window manager log in and the running panel in background
 
-    $ shift --backup [dir-name]
+    $ Shift --backup [dir-name]
+    
+Installing other dotfiles to your system.
+
+    $ Shift --deploy [github-url]
     
 Set wall of desktop using third-party.
 
-    $ shift --wall 'path/to/your/image'
+    $ Shift --wall fill|tile 'path/to/your/image'
     
 Available options:
 
-    Usage   : shift [--options] preset [--options] preset
-    Example : shift --themes Groove --polybar brown
+    Usage   : Shift [--options] preset [--options] preset
+    Example : Shift --setup arc --polybar light
 
     Options :
          --backup-all     Backup all configuration into dotfiles.
          --backup         Backup your desktop config into tarball.
-         --icons          Change GTK3 icons.
-         --themes         Change setup of window manager.
+	 --deploy         Clone and install the dotfiles into your system.
+         --icons          Change GTK2 / GTK 3 icons.
+         --setup          Change setup of window manager.
          --wall           Set wallpaper to desktop.
          -v,--version     Show version.
          -h,--help        Show this help.
@@ -129,16 +130,16 @@ Available options:
 
 ## Contribute
 
-If you want another wm added to this tools, just create an **issues**.
+If you want another window manager added to this tools, just create an **issues**.
 
 ## :octocat: Credits
-- Thanks to Allah and Edo -maland- (https://github.com/Screetsec)
-- https://www.archlinux.org/
-- Dracos Linux from Indonesia ( Penetration os ), you can see in http://dracos-linux.org/
+- Thanks to Allah
+- Archlinux as my favorite distro, check this https://www.archlinux.org/
+- Dracos Linux from Indonesia, you can see in http://dracos-linux.org/
 - Linuxer Desktop Art - group for sharing Linux/BSD desktop customization.(https://web.facebook.com/groups/linuxart)
 - BASH.ID - Group for discussing scripting for any other shell in the GNU/Linux (https://t.me/Bash_ID).
-- [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) adn r/unixporn for sharing resources about customization.
-- Nanda Vera (https://github.com/yuune), Fikri Omar(https://github.com/fikriomar16), and Addy(https://github.com/addy-dclxvi).
+- [Edo -maland-](https://github.com/Screetsec), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn for sharing resources about customization.
+- [Nanda Vera](https://github.com/yuune), [Fikri Omar](https://github.com/fikriomar16), and [Addy](https://github.com/addy-dclxvi).
 - unix121 https://github.com/unix121/i3wm-themer
 - nizarmah https://github.com/nizarmah/tintedarc
 - And other users have shared their dotfiles.
