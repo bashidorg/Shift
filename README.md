@@ -4,11 +4,11 @@
 ![Version](https://img.shields.io/badge/Version-1.0-brightgreen.svg)
 ![Release](https://img.shields.io/badge/Released-stable-red.svg)
 
+![preview](shift.gif)
+
 Shift is a theme switcher tool to change your window manager setup, written in BASH. `shift` can change winow manager theme
 , terminal colorscheme , and panel in **single line command** with available arguments.`shift` automated to detect what window manager log in session you entered and check panel that are running in the background. `shift` currently support
 some window manager : `Openbox`, `windowchef`, and `Xfce4`/`Xfwm4`. I
-
-![preview](shift.gif)
 
 ## Window manager supported
 
@@ -88,10 +88,6 @@ Change setup include (terminal,wm themes) with different panel.
 
     $ Shift --setup [preset-name] --polybar|--lemonbar|--tint2 [panel-name]
 
-Only change the gtk2/3 icons.
-
-    $ Shift --icons [icons-name]
-
 Change gtk 3 themes and icons when you login in `Xfce4`/`Xfwm4` session.
  
     $ Shift --setup [themes-name] --icons [icons-name]
@@ -115,12 +111,12 @@ Set wall of desktop using third-party.
 Available options:
 
     Usage   : Shift [--options] preset [--options] preset
-    Example : Shift --setup arc --polybar light
+    Example : Shift --setup arc --tint2 light
 
     Options :
          --backup-all     Backup all configuration into dotfiles.
          --backup         Backup your desktop config into tarball.
-	 --deploy         Clone and install the dotfiles into your system.
+	     --deploy         Clone and install the dotfiles into your system.
          --icons          Change GTK2 / GTK 3 icons.
          --setup          Change setup of window manager.
          --wall           Set wallpaper to desktop.
