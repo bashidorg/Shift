@@ -938,9 +938,14 @@ backup_all(){
 
 
 
-help(){ printf "%s" "\
+more(){ printf "%s" "\
+ _____ _   _ ___ _   
+|   __| |_|_|  _| |_ 
+|__   |   | |  _|  _|
+|_____|_|_|_|_| |_|   v.1.1
+                    
 Usage   : shift [--options] preset [--options] preset
-Example : shift --setup Groove --polybar brown
+Example : shift --setup arc --polybar light
 
 Options :
      --backup-all     	Backup all configuration into dotfiles.
@@ -955,10 +960,23 @@ Options :
 "
 }
 
+help(){ printf "%s" "\
+ _____ _   _ ___ _   
+|   __| |_|_|  _| |_ 
+|__   |   | |  _|  _|
+|_____|_|_|_|_| |_|   v1.1
+
+Usage   : shift [--options] preset [--options] preset
+
+Error: missing an argument options, try -h or --help for help
+"
+}
+
+
 
 version(){
     printf "%s" "\
-Shift version 1.0
+Shift v1.1#stable
 
 MIT License
 
@@ -985,12 +1003,6 @@ SOFTWARE.
 "
 }
 
-
-try(){ printf "%s" "\
-No valid argument given please try -h for help"
-}
-
-
 case "$1" in
 	--backup-all) 		backup_all;;
     	--backup) 		backup;;
@@ -1000,6 +1012,6 @@ case "$1" in
 				reload_wm ;;
     	--wall) 		set_wall ;;
     	-v|--version) 		version ;;
-    	-h|--help)		help ;;
-    	*)  			try ;;
+    	-h|--help)		more ;;
+    	*)  			help ;;
 esac

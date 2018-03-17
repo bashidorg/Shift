@@ -1,14 +1,19 @@
 # Shift
 
 ![Chat](https://img.shields.io/badge/Chat-telegram-blue.svg)
-![Version](https://img.shields.io/badge/Version-1.0-brightgreen.svg)
+![Version](https://img.shields.io/badge/Version-1.1-brightgreen.svg)
 ![Release](https://img.shields.io/badge/Released-stable-red.svg)
 
-![preview](shift.gif)
+![preview](img/shift.gif)
 
-Shift is a theme switcher tool to change your window manager setup, written in BASH. `shift` can change winow manager theme
-, terminal colorscheme , and panel in **single line command** with available arguments.`shift` automated to detect what window manager log in session you entered and check panel that are running in the background. `shift` currently support
-some window manager : `Openbox`, `windowchef`, and `Xfce4`/`Xfwm4`. I
+`Shift` is a theme switcher tool to change your window manager setup, written in BASH. `Shift` can change winow manager theme
+, terminal colorscheme , and panel in **single line command** with available arguments.`Shift` automated to detect what window manager log in session you entered and check panel that are running in the background. `shift` currently support
+some window manager : `Openbox`, `windowchef`, and `Xfce4`/`Xfwm4`.
+
+## Preview
+
+![scrot](img/preview.png)
+
 
 ## Window manager supported
 
@@ -26,9 +31,9 @@ What you might need :
 
 ## Installation
 
-    $ git clone https://github.com/noirecat/shift.git
+    $ git clone https://github.com/noirecat/Shift.git
     $ cd Shift
-    $ chmod +x Shift
+    $ sudo make install
 
 ## The Rules of Config
 
@@ -76,9 +81,9 @@ Example config of window manager include in this repo.
       
   And include this line:
   
-        # include ".colors/preset"
+        # include ".colors/[preset-name]"
 
-## Usage
+## Usage 
 
 Change setup include (terminal,wm gtk2/3 themes) in single line command.
 
@@ -96,15 +101,15 @@ Backup all desktop configuration includes another wm that supported.
   
     $ Shift --backup-all [dir-name]
 
-Or, just backup the current window manager log in and the running panel in background
+Or, just backup the current window manager log in and the running panel in background.
 
     $ Shift --backup [dir-name]
     
-Installing other dotfiles to your system.
+Installing another dotfiles into your system.
 
     $ Shift --deploy [github-url]
     
-Set wall of desktop using third-party.
+Set a desktop wallpaper using third-party `feh`, `nitrogen`.
 
     $ Shift --wall fill|tile 'path/to/your/image'
     
@@ -126,18 +131,18 @@ Available options:
 
 ## Contribute
 
-If you want another window manager added to this tools, just create an **issues**.
+If you want to add another window manager to this tools, just create an **issues**.
 
 ## :octocat: Credits
-- Thanks to Allah
-- Archlinux as my favorite distro, check this https://www.archlinux.org/
-- Dracos Linux from Indonesia, you can see in http://dracos-linux.org/
-- Linuxer Desktop Art - group for sharing Linux/BSD desktop customization.(https://web.facebook.com/groups/linuxart)
+- Thanks to Allah.
+- Archlinux as my favorite distro, check this (https://www.archlinux.org/).
+- Dracos Linux from Indonesia, you can see in (http://dracos-linux.org/).
+- Linuxer Desktop Art - group for sharing Linux/BSD desktop customization (https://web.facebook.com/groups/linuxart).
 - BASH.ID - Group for discussing scripting for any other shell in the GNU/Linux (https://t.me/Bash_ID).
-- [Edo -maland-](https://github.com/Screetsec), [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn for sharing resources about customization.
-- [Nanda Vera](https://github.com/yuune), [Fikri Omar](https://github.com/fikriomar16), and [Addy](https://github.com/addy-dclxvi).
-- unix121 https://github.com/unix121/i3wm-themer
-- nizarmah https://github.com/nizarmah/tintedarc
+- [Eye Candy Linux](https://plus.google.com/communities/104794997718869399105) and r/unixporn for sharing resources about customization.
+- [Edo -maland-](https://github.com/Screetsec), [Nanda Vera](https://github.com/yuune), [Fikri Omar](https://github.com/fikriomar16), and [Addy](https://github.com/addy-dclxvi).
+- unix121 (https://github.com/unix121/i3wm-themer).
+- nizarmah (https://github.com/nizarmah/tintedarc).
 - And other users have shared their dotfiles.
 
 ## License
